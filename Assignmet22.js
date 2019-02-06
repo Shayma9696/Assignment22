@@ -2,30 +2,31 @@
  function findSmallestElement( arr){
      arr=[2,4,1,3,5];
 let temp = arr[0];
-   for(let i=0; i<arr.length; i++) {
-     if(temp>arr[i]) {
-     temp=arr[i];
-   }
-  }
-  console.log(`the smallest number is ${temp}`)
+let tem=arr[0];
+for(let i=0; i<arr.length; i++) {
+    for(let j=i+1;j<arr.length;j++){
 
-  for(let i=0; i<arr.length; i++) {
-      for(let j=i+1;j<arr.length;j++){
-
-      if (arr[i] > arr[j])
-      {
-          temp = arr[i];
-          arr[i] = arr[j];
-          arr[j] = temp;
-      }
-  
+    if (arr[i] > arr[j])
+    {
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
- }
- console.log(`the second largest number is ${temp}`)
-   return temp;
+
+    if (arr[i] > arr[j])
+    {
+        tem = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tem;
+    }
+  }
+
+
+}
+return`the  Second smallest number is ${tem}   and the  Second largest number is ${temp}`;
  }
  console.log("First Question         ");
-findSmallestElement();
+console.log(findSmallestElement());
 
 
 
